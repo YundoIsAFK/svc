@@ -52,8 +52,8 @@ class Calculator {
 		this.ground = "0.7;1.3";
 
 		// CONST
-		this.const_timeRemainingData = [16, 10];
-		this.const_timeModifierData = [4, 1];
+		this.const_timeRemainingData = [24, 10];
+		this.const_timeModifierData = [8, 1];
 
 		this.const_basedHeroesValue = 2000;
 		this.const_basedAttackHeroesValue = 75;
