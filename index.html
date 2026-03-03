@@ -7,6 +7,18 @@
 
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
+
+<style>
+.range-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.range-value {
+    min-width: 70px;
+    font-weight: bold;
+}
+</style>
 </head>
 
 <body>
@@ -48,15 +60,19 @@
 <i class="icon icon-arrow-right mr-1"></i>
 <b>Settings</b>
 </label>
-<div class="accordion-body">
+<div class="accordion-body show">
 
 <table class="table">
 <tbody>
 
 <tr>
 <td>Time Remaining</td>
-<td><input class="form-input" type="number" min="0" max="23" id="time_hour" placeholder="Hours"></td>
-<td><input class="form-input" type="number" min="0" max="59" id="time_minute" placeholder="Minutes"></td>
+<td colspan="2">
+<div class="range-container">
+<input type="range" min="1" max="960" value="960" step="1" id="time_slider">
+<div class="range-value" id="time_display">16:00</div>
+</div>
+</td>
 </tr>
 
 <tr>
@@ -127,7 +143,6 @@
 <i class="icon icon-arrow-right mr-1"></i>
 <b>Technologies</b>
 </label>
-
 <div class="accordion-body">
 
 <table class="table">
@@ -279,5 +294,36 @@ Conquest Calculator
 
 <script src="js/regression.js"></script>
 <script src="js/conquestCalculator.js"></script>
+
+<script>
+// Slider logic: 1 min (1) to 16 hours (960 minutes)
+const slider = document.getElementById('time_slider');
+const display = document.getElementById('time_display');
+
+function updateTime() {
+    let totalMinutes = parseInt(slider.value);
+    let hours = Math.floor(totalMinutes / 60);
+    let minutes = totalMinutes % 60;
+    display.innerText = hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+
+    calc.time_hour = hours;
+    calc.time_minute = minutes;
+    calc.render();
+}
+
+slider.addEventListener('input', updateTime);
+updateTime();
+</script>
+
+<script>
+// Accordion toggle
+const accordions = document.querySelectorAll('.accordion');
+accordions.forEach(acc => {
+    const header = acc.querySelector('.accordion-header');
+    const body = acc.querySelector('.accordion-body');
+    header.addEventListener('click', () => body.classList.toggle('show'));
+});
+</script>
+
 </body>
 </html>
