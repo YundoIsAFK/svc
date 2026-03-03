@@ -157,7 +157,13 @@ input[type="range"] {
 <td colspan="2">
 <div class="range-container">
     <input type="range" min="1" max="960" value="960" step="1" id="time_slider">
-    <div class="range-value" id="time_display">16:00</div>
+    <input 
+    type="text" 
+    class="range-value" 
+    id="time_display" 
+    value="16:00"
+    style="border:none; outline:none; width:70px; text-align:center;"
+>
 </div>
 </td>
 </tr>
@@ -384,20 +390,62 @@ input[type="range"] {
 const slider = document.getElementById('time_slider');
 const display = document.getElementById('time_display');
 
-function updateTime() {
-    const totalMinutes = parseInt(slider.value);
+function formatTime(totalMinutes) {
     const hours = Math.floor(totalMinutes / 60);
     const minutes = totalMinutes % 60;
-    display.innerText = hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+    return hours + ':' + (minutes < 10 ? '0' : '') + minutes;
+}
 
-    // Update Calculator instance
+function updateFromSlider() {
+    const totalMinutes = parseInt(slider.value);
+    display.value = formatTime(totalMinutes);
+
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+
     calc.time_hour = hours;
     calc.time_minute = minutes;
     calc.render();
 }
 
-slider.addEventListener('input', updateTime);
-updateTime();
+function updateFromInput() {
+    const value = display.value.trim();
+    const parts = value.split(':');
+
+    if (parts.length !== 2) return;
+
+    let hours = parseInt(parts[0]);
+    let minutes = parseInt(parts[1]);
+
+    if (isNaN(hours) || isNaN(minutes)) return;
+
+    let totalMinutes = hours * 60 + minutes;
+
+    // Clamp between slider limits
+    if (totalMinutes < parseInt(slider.min)) {
+        totalMinutes = parseInt(slider.min);
+    }
+    if (totalMinutes > parseInt(slider.max)) {
+        totalMinutes = parseInt(slider.max);
+    }
+
+    slider.value = totalMinutes;
+    display.value = formatTime(totalMinutes);
+
+    calc.time_hour = Math.floor(totalMinutes / 60);
+    calc.time_minute = totalMinutes % 60;
+    calc.render();
+}
+
+// Slider movement
+slider.addEventListener('input', updateFromSlider);
+
+// Manual input
+display.addEventListener('change', updateFromInput);
+display.addEventListener('blur', updateFromInput);
+
+// Init
+updateFromSlider();
 </script>
 
 </body>
