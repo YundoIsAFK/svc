@@ -55,7 +55,7 @@ class Calculator {
 		this.const_timeRemainingData = [24, 10];
 		this.const_timeModifierData = [8, 1];
 
-		this.const_basedHeroesValue = 2250;
+		this.const_basedHeroesValue = 2000;
 		this.const_basedAttackHeroesValue = 75;
 
 		// Set values based on hash
