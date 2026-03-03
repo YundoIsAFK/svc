@@ -1,150 +1,144 @@
 <!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Formation conquête pour le jeu Royal Revolt 2 de Flare Game - Texte by Sakai - From France 98" />
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RR2 – Conquest Formation Guide</title>
 
-		<title>RR2 - Formation conquête - by France 98</title>
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 
-		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-		<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-		<style rel="stylesheet">
-			.accordion input:checked~.accordion-body, .accordion[open] .accordion-body {
-				overflow: auto;
-			}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<h3 class="mb-0">Formation au <a href="https://rr2-france98.github.io/">calculateur de Conquête</a></h1>
-			<div class="columns">
-				<div class="column col-6">
-					<ol>
-						<li>Pour remplir correctement la calculatrice sur la section Technologie il faut déterminer la technologie des équipes</li>
-						<li>Comment déterminer la présence de la Tech valeur total troupe +1 attaque et valeur total troupe +1 defense</li>
-					</ol>
-				</div>
+<style>
+.accordion input:checked~.accordion-body,
+.accordion[open] .accordion-body {
+    overflow: auto;
+}
+</style>
+</head>
 
-				<div class="column col-6">
-					<ol>
-						<li>Pour déterminer la Tech +1 troupe attaque de l’adversaire il faut que ce dernier Vous attaque</li>
-						<li>Pour déterminer la Tech +1 Defense troupes il faut que se soit vous qui lanciez l’attaque</li>
-					</ol>
-				</div>
-			</div>
+<body>
+<div class="container">
+<h3 class="mb-0">Conquest Calculator Formation Guide</h3>
 
-			<div class="accordion">
-				<input type="radio" id="accordion-1" name="accordion-checkbox" hidden>
-				<label class="accordion-header bg-primary py-2" for="accordion-1">
-					<i class="icon icon-arrow-right mr-1"></i>
-					<b>1.	PAS DE TECHNOLOGIE ATTAQUE ET DÉFENSE +1 TROUPES</b>
-				</label>
-				<div class="accordion-body mb-2">
-					<ol>
-						<li>Dans la colonne de gauche (attaque) troupes engagées 2500, valeur total attaque 2500. Les 2 valeurs sont identique donc aucune tech</li>
-						<li>Dans la colonne de droite(défense) troupes engagés 2000, valeur total de defense troupes 2000. Les 2 valeurs sont identique donc aucune tech</li>
-					</ol>
+<div class="columns">
+<div class="column col-6">
+<ol>
+<li>To correctly fill in the calculator in the Technology section, you must determine the teams’ technologies.</li>
+<li>You must determine whether the team has Total Troop Attack +1 or Total Troop Defense +1 technology.</li>
+</ol>
+</div>
 
-					<img class="img-responsive" src="img/formation/step1.jpg" />
-				</div>
-			</div>
+<div class="column col-6">
+<ol>
+<li>To determine the opponent’s +1 Troop Attack tech, they must attack you.</li>
+<li>To determine +1 Troop Defense tech, you must be the attacker.</li>
+</ol>
+</div>
+</div>
 
-			<div class="accordion">
-				<input type="radio" id="accordion-2" name="accordion-checkbox" hidden>
-				<label class="accordion-header bg-primary py-2" for="accordion-2">
-					<i class="icon icon-arrow-right mr-1"></i>
-					<b>2.	VALEUR TOTAL ATTAQUE +1 TROUPES</b>
-				</label>
-				<div class="accordion-body">
-					<ol>
-						<li>Exemple ci-dessous pour déterminer la valeur attaque de RL</li>
-						<li>La valeur total attaque troupe est doublé par rapport aux troupes engagé ce qui signifie que RL possède +1 attaque troupes</li>
-					</ol>
+<div class="accordion">
+<input type="radio" id="accordion-1" name="accordion-checkbox" hidden>
+<label class="accordion-header bg-primary py-2" for="accordion-1">
+<i class="icon icon-arrow-right mr-1"></i>
+<b>1. NO +1 TROOP ATTACK OR DEFENSE TECHNOLOGY</b>
+</label>
+<div class="accordion-body mb-2">
+<ol>
+<li>Left column (attack): Engaged troops 2500, Total attack value 2500. Since both numbers are identical, there is no tech.</li>
+<li>Right column (defense): Engaged troops 2000, Total troop defense value 2000. Since both numbers are identical, there is no tech.</li>
+</ol>
+<img class="img-responsive" src="img/formation/step1.jpg">
+</div>
+</div>
 
-					<img class="img-responsive" src="img/formation/step3_2.jpg" />
-				</div>
-			</div>
+<div class="accordion">
+<input type="radio" id="accordion-2" name="accordion-checkbox" hidden>
+<label class="accordion-header bg-primary py-2" for="accordion-2">
+<i class="icon icon-arrow-right mr-1"></i>
+<b>2. TOTAL TROOP ATTACK +1</b>
+</label>
+<div class="accordion-body">
+<ol>
+<li>Example below to determine total troop attack value.</li>
+<li>If the total troop attack value is double the engaged troops, it means +1 Troop Attack tech is active.</li>
+</ol>
+<img class="img-responsive" src="img/formation/step3_2.jpg">
+</div>
+</div>
 
-			<div class="accordion">
-				<input type="radio" id="accordion-3" name="accordion-checkbox" hidden>
-				<label class="accordion-header bg-primary py-2" for="accordion-3">
-					<i class="icon icon-arrow-right mr-1"></i>
-					<b>3.	VALEUR TOTAL DEFENSE +1 TROUPES</b>
-				</label>
-				<div class="accordion-body">
-					<ol>
-						<li>Exemple ci-dessous pour déterminer la présence valeur +1 defense troupes</li>
-						<li>La valeur totale de défense troupes est doublé par rapport aux troupes engagé</li>
-					</ol>
+<div class="accordion">
+<input type="radio" id="accordion-3" name="accordion-checkbox" hidden>
+<label class="accordion-header bg-primary py-2" for="accordion-3">
+<i class="icon icon-arrow-right mr-1"></i>
+<b>3. TOTAL TROOP DEFENSE +1</b>
+</label>
+<div class="accordion-body">
+<ol>
+<li>Example below to determine the presence of +1 Troop Defense tech.</li>
+<li>If the total troop defense value is double the engaged troops, the tech is active.</li>
+</ol>
+<img class="img-responsive" src="img/formation/step3_1.jpg">
+</div>
+</div>
 
-					<img class="img-responsive" src="img/formation/step3_1.jpg" />
-				</div>
-			</div>
+<div class="accordion">
+<input type="radio" id="accordion-4" name="accordion-checkbox" hidden>
+<label class="accordion-header bg-primary py-2" for="accordion-4">
+<i class="icon icon-arrow-right mr-1"></i>
+<b>4. WATCHTOWER DEFENSE MODIFIER</b>
+</label>
+<div class="accordion-body">
+<img class="img-responsive mb-2" src="img/formation/step4_1.jpg">
 
-			<div class="accordion">
-				<input type="radio" id="accordion-4" name="accordion-checkbox" hidden>
-				<label class="accordion-header bg-primary py-2" for="accordion-4">
-					<i class="icon icon-arrow-right mr-1"></i>
-					<b>4.	MODIFICATEUR DEFENSE TOUR DE GUET</b>
-				</label>
-				<div class="accordion-body">
-					<img class="img-responsive mb-2" src="img/formation/step4_1.jpg" />
+<p class="text-error"><b>A. ACCESSING WATCHTOWER STATS</b></p>
+<img class="img-responsive" src="img/formation/step4_2.jpg">
+<p>The watchtower defense modifier increases tower resistance by +20%.</p>
 
-					<p class="text-error"><b>A. COMMENT ACCÉDER AUX CARRACTERISTIQUE TOUR DE GUET</b></p>
-					<img class="img-responsive" src="img/formation/step4_2.jpg" />
-					<p>Le modificateur de defense Tour de guet est de +20% ça augmente la résistance de la tour</p>
+<p class="text-error mt-2"><b>B. Without Watchtower Modifier Technology</b></p>
+<p>The first image shows a tower without the modifier tech. The default value of a level 1 watchtower is 1.20.</p>
 
-					<p class="text-error mt-2"><b>B. Sans Technologie Modificateurs Tour de Guet</b></p>
-					<p>La première image vous montre une tour sans Tech modificateur tour de guet. La valeur par défaut d’une tour de guet niveau 1 est de 1.20</p>
+<p class="text-error mt-2"><b>C. With Watchtower Modifier Technology</b></p>
+<p>Second example with +20% Watchtower Defense Modifier tech. Add 20% to the default value of 1.20.</p>
+<img class="img-responsive" src="img/formation/step4_3.jpg">
+<p>Example calculation:<br><br>
+1.20 + (20% + 20%) = 1.68<br><br>
+From this you can also deduce the technology path chosen.</p>
+</div>
+</div>
 
-					<p class="text-error mt-2"><b>C. Technologie Modificateur Tour de Guet</b></p>
-					<p>2e exemple avec Tech modificateur defense Tour de guet +20%. On ajoute 20% à la valeur par défaut de 1.20</p>
-					<img class="img-responsive" src="img/formation/step4_3.jpg" />
-					<p>Donc sur cette exemple Polish Knight à développé 2 Tech modificateur defense Tour de guet.<br /><br />1.20 +(20%+20%)=1.68<br /><br />On peut ainsi aussi devinez le chemin de Tech qu’ils ont emprunter</p>
-				</div>
-			</div>
+<div class="accordion">
+<input type="radio" id="accordion-5" name="accordion-checkbox" hidden>
+<label class="accordion-header bg-primary py-2" for="accordion-5">
+<i class="icon icon-arrow-right mr-1"></i>
+<b>5. TOTAL HERO ATTACK OR DEFENSE +5</b>
+</label>
+<div class="accordion-body">
+<img class="img-responsive" src="img/formation/step5_1.jpg">
 
-			<div class="accordion">
-				<input type="radio" id="accordion-5" name="accordion-checkbox" hidden>
-				<label class="accordion-header bg-primary py-2" for="accordion-5">
-					<i class="icon icon-arrow-right mr-1"></i>
-					<b>5.	VALEUR TOTAL ATTAQUE ou DEFENSE HEROS +5</b>
-				</label>
-				<div class="accordion-body">
-					<img class="img-responsive" src="img/formation/step5_1.jpg" />
-					<p>Ces deux Tech n’ont pratiquement aucune incidence sur le déroulé des guerres donc pas important mais en déterminant cette Tech sur l’adversaire on peut deviner ou en ils en sont et quel chemin ils ont pris pour leur Tech.</p>
-					<p>La valeur total  attaque ou defense Hero est de 75 par défaut</p>
+<p>These technologies have minimal impact on war outcomes but help identify the opponent’s tech path.</p>
+<p>The default total hero attack or defense value is 75.</p>
 
-					<img class="img-responsive" src="img/formation/step5_2.jpg" />
-					<p>Si en divisant la valeur totale Heroe par le nombre de troupe engagé vous trouvez 80 c’est qu’il y a une Tech +5 Heroe <span class="text-error">( il possible aussi qu’il y a 2 Tech sur l’arbre technologie on peut aussi trouver 90)</span></p>
-					<b>Exemple image ci-dessus </b>
-					<ul>
-						<li>Troupes engagé : 1</li>
-						<li>Valeur totale hero: 80</li>
-						<li> 80 : 1 = 80 --> Tech +5 Hero</li>
-						<li><b>Ceci est valable pour attaque et défense Heroe</b></li>
-					</ul>
+<img class="img-responsive" src="img/formation/step5_2.jpg">
+<p>If you divide total hero value by engaged troops and get 80, it means +5 Hero tech is active.  
+It is also possible to find 90 if two tech upgrades are active.</p>
 
-					<img class="img-responsive" src="img/formation/step5_3.jpg" />
-					<p>On peut ainsi devinez le choix des Tech et ainsi déterminer une stratégie</p>
-				</div>
-			</div>
+<b>Example:</b>
+<ul>
+<li>Engaged troops: 1</li>
+<li>Total hero value: 80</li>
+<li>80 ÷ 1 = 80 → +5 Hero tech</li>
+<li>This applies to both hero attack and defense.</li>
+</ul>
 
-			<footer class="text-center mt-2 py-2">
-				<a href="https://discord.gg/szaPd6S" target="_blank">Rejoignez-nous sur Discord</a> - Texte by Sakai
-			</footer>
-		</div>
+<img class="img-responsive" src="img/formation/step5_3.jpg">
+<p>This helps determine technology choices and plan strategy.</p>
+</div>
+</div>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179266913-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+<footer class="text-center mt-2 py-2">
+Conquest Guide
+</footer>
 
-			gtag('config', 'UA-179266913-1');
-		</script>
-	</body>
+</div>
+</body>
 </html>
