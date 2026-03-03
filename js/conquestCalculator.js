@@ -49,7 +49,7 @@ class Calculator {
 		this.time_minute = 0;
 		this.attacker = "team";
 		this.tower_level = 1;
-		this.ground = "0.7;1.3";
+		this.ground = "0.8;1.2";
 
 		// CONST
 		this.const_timeRemainingData = [24, 10];
