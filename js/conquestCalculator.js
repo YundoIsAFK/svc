@@ -1,10 +1,3 @@
-/*
-* SOURCES
-*
-* https://forums.flaregames.com/t/how-to-achieve-supreme-victory-in-conquest/16641/2
-* https://royal-revolt-2.fandom.com/wiki/Conquest_-_Supreme_Victory
-*
-*/
 class Calculator {
 	constructor() {
 		// Show console info message
