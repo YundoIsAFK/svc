@@ -52,8 +52,8 @@ class Calculator {
 		this.ground = "0.8;1.2";
 
 		// CONST
-		this.const_timeRemainingData = [24, 10];
-		this.const_timeModifierData = [8, 1];
+		this.const_timeRemainingData = [16, 10];
+		this.const_timeModifierData = [4, 1];
 
 		this.const_basedHeroesValue = 2000;
 		this.const_basedAttackHeroesValue = 75;
@@ -77,7 +77,7 @@ class Calculator {
 
 		// Time modifier
 		var e2Calc = regression('polynomial', [this.const_timeRemainingData, this.const_timeModifierData, [d2, null]], 1),
-				e2 = (d2 >= 8) ? e2Calc.points[2][1] : 1;
+				e2 = (d2 >= 4) ? e2Calc.points[2][1] : 1;
 
 		console.log('-------------- e2', e2);
 
