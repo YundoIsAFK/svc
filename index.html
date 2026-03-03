@@ -15,8 +15,8 @@
     gap: 10px;
 }
 .range-value {
-    min-width: 70px;
-    font-weight: bold;
+    min-width: 50px;
+    text-align: center;
 }
 </style>
 </head>
@@ -35,19 +35,19 @@
 </tr>
 
 <tr>
-<td><img src="img/skull.png" alt="Skulls"></td>
+<td><img src="img/skull.png"></td>
 <td class="text-center"><b id="skull_team">0</b></td>
 <td class="text-center"><b id="skull_opponent">0</b></td>
 </tr>
 
 <tr>
-<td><img src="img/energy.png" alt="Energy"></td>
+<td><img src="img/energy.png"></td>
 <td class="text-center"><b id="power_team">0</b></td>
 <td class="text-center"><b id="power_opponent">0</b></td>
 </tr>
 
 <tr>
-<td><img src="img/calculator.png" alt="Attack/Defense"></td>
+<td><img src="img/calculator.png"></td>
 <td class="text-center"><b id="attackdef_team">0</b></td>
 <td class="text-center"><b id="attackdef_opponent">0</b></td>
 </tr>
@@ -60,7 +60,7 @@
 <i class="icon icon-arrow-right mr-1"></i>
 <b>Settings</b>
 </label>
-<div class="accordion-body show">
+<div class="accordion-body">
 
 <table class="table">
 <tbody>
@@ -69,8 +69,8 @@
 <td>Time Remaining</td>
 <td colspan="2">
 <div class="range-container">
-<input type="range" min="1" max="960" value="960" step="1" id="time_slider">
-<div class="range-value" id="time_display">16:00</div>
+    <input type="range" min="1" max="960" value="960" step="1" id="time_slider">
+    <div class="range-value" id="time_display">16:00</div>
 </div>
 </td>
 </tr>
@@ -143,6 +143,7 @@
 <i class="icon icon-arrow-right mr-1"></i>
 <b>Technologies</b>
 </label>
+
 <div class="accordion-body">
 
 <table class="table">
@@ -294,18 +295,18 @@ Conquest Calculator
 
 <script src="js/regression.js"></script>
 <script src="js/conquestCalculator.js"></script>
-
 <script>
-// Slider logic: 1 min (1) to 16 hours (960 minutes)
+// Slider logic for time remaining
 const slider = document.getElementById('time_slider');
 const display = document.getElementById('time_display');
 
 function updateTime() {
-    let totalMinutes = parseInt(slider.value);
-    let hours = Math.floor(totalMinutes / 60);
-    let minutes = totalMinutes % 60;
+    const totalMinutes = parseInt(slider.value);
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
     display.innerText = hours + ':' + (minutes < 10 ? '0' : '') + minutes;
 
+    // Update Calculator instance
     calc.time_hour = hours;
     calc.time_minute = minutes;
     calc.render();
@@ -313,16 +314,6 @@ function updateTime() {
 
 slider.addEventListener('input', updateTime);
 updateTime();
-</script>
-
-<script>
-// Accordion toggle
-const accordions = document.querySelectorAll('.accordion');
-accordions.forEach(acc => {
-    const header = acc.querySelector('.accordion-header');
-    const body = acc.querySelector('.accordion-body');
-    header.addEventListener('click', () => body.classList.toggle('show'));
-});
 </script>
 
 </body>
