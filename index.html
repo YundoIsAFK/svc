@@ -386,7 +386,7 @@ input[type="range"] {
 <script src="js/regression.js"></script>
 <script src="js/conquestCalculator.js"></script>
 <script>
-// Slider logic for time remaining
+
 const slider = document.getElementById('time_slider');
 const display = document.getElementById('time_display');
 
@@ -421,7 +421,7 @@ function updateFromInput() {
 
     let totalMinutes = hours * 60 + minutes;
 
-    // Clamp between slider limits
+    
     if (totalMinutes < parseInt(slider.min)) {
         totalMinutes = parseInt(slider.min);
     }
@@ -437,14 +437,14 @@ function updateFromInput() {
     calc.render();
 }
 
-// Slider movement
+
 slider.addEventListener('input', updateFromSlider);
 
-// Manual input
+
 display.addEventListener('change', updateFromInput);
 display.addEventListener('blur', updateFromInput);
 
-// Init
+
 updateFromSlider();
 </script>
 
