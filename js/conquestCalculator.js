@@ -1,9 +1,9 @@
 class Calculator {
 	constructor() {
-		// Show console info message
+		
 		console.log('%c Look at "calc" variable to play with this script ', 'background: red; color: #222; font-size: 32px;');
 
-		// Save DOM render output
+		
 		[
 			'skull_team',
 			'skull_opponent',
@@ -15,7 +15,7 @@ class Calculator {
 			this[k] = document.getElementById(k);
 		});
 
-		// Set default numeric value
+		
 		[
 			'skull_win_team',
 			'skull_win_opponent',
@@ -44,21 +44,21 @@ class Calculator {
 			this[k] = 1;
 		});
 
-		// Set others default
+		
 		this.time_hour = 23;
 		this.time_minute = 0;
 		this.attacker = "team";
 		this.tower_level = 1;
 		this.ground = "0.8;1.2";
 
-		// CONST
+		
 		this.const_timeRemainingData = [16, 10];
 		this.const_timeModifierData = [4, 1];
 
 		this.const_basedHeroesValue = 2000;
 		this.const_basedAttackHeroesValue = 75;
 
-		// Set values based on hash
+		
 		const that = this;
 		document.location.hash.split('&').forEach(hash => {
 			const hashSplited = hash.split('=');
@@ -72,20 +72,20 @@ class Calculator {
 	}
 
 	render() {
-		// Time remaining (Hours)
+		
 		var d2 = this.time_hour + (this.time_minute / 60);
 
-		// Time modifier
+		
 		var e2Calc = regression('polynomial', [this.const_timeRemainingData, this.const_timeModifierData, [d2, null]], 1),
 				e2 = (d2 >= 4) ? e2Calc.points[2][1] : 1;
 
 		console.log('-------------- e2', e2);
 
-		// Terrain modifier
+		
 		var groundAttacker = parseFloat(this.ground.split(';')[0]),
 				groundDefender = parseFloat(this.ground.split(';')[1]);
 
-		// Rating
+		
 		var attackdef_team = 0,
 				attackdef_opponent = 0;
 
@@ -103,7 +103,7 @@ class Calculator {
 		this.attackdef_team.innerText = this.formatNumber(attackdef_team);
 		this.attackdef_opponent.innerText = this.formatNumber(attackdef_opponent);
 
-		// SV
+		
 		var svBased = (this.nb_player_team + this.nb_player_opponent) * this.const_basedHeroesValue,
 				svBasedTeam = svBased * attackdef_opponent / attackdef_team * e2,
 				svBasedOpponent = svBased * attackdef_team / attackdef_opponent * e2;
@@ -114,7 +114,7 @@ class Calculator {
 		this.skull_team.innerText = this.formatNumber(skull_team);
 		this.skull_opponent.innerText = this.formatNumber(skull_opponent);
 
-		// Energy cost
+		
 		var power_team = Math.round((16 + 16 * attackdef_opponent / attackdef_team) * this.team_power),
 				power_opponent = Math.round((16 + 16 * attackdef_team / attackdef_opponent) * this.opponent_power);
 
@@ -132,8 +132,8 @@ class Calculator {
 
 const calc = new Calculator();
 
-// Add listeners
-// Can use Proxy, but go simplier way
+
+
 const $inputs = document.querySelectorAll('select, input');
 [...$inputs].forEach($input => $input.addEventListener('change', e => {
 	// Disable for accordion checkbox
@@ -143,7 +143,7 @@ const $inputs = document.querySelectorAll('select, input');
 	calc[e.target.id] = (!isNaN(e.target.value)) ? parseFloat(e.target.value) : e.target.value;
 	calc.render();
 
-	// Set hash to share link
+	
 	const newHash = e.target.id + '=' + calc[e.target.id];
 	const replaceRegex = new RegExp(e.target.id + '=([a-z0-9;.])*', 'gi');
 	if(document.location.hash.indexOf(e.target.id + '=') === -1)
