@@ -45,7 +45,7 @@ class Calculator {
 		});
 
 		
-		this.time_hour = 23;
+		this.time_hour = 16;
 		this.time_minute = 0;
 		this.attacker = "team";
 		this.tower_level = 1;
