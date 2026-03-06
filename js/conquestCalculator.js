@@ -136,7 +136,7 @@ const calc = new Calculator();
 
 const $inputs = document.querySelectorAll('select, input');
 [...$inputs].forEach($input => $input.addEventListener('change', e => {
-	// Disable for accordion checkbox
+	
 	if(e.target.id.indexOf('accordion') !== -1)
 		return;
 
