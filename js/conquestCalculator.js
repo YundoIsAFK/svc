@@ -115,8 +115,8 @@ class Calculator {
 		this.skull_opponent.innerText = this.formatNumber(skull_opponent);
 
 		
-		var power_team = Math.round((16 + 16 * attackdef_opponent / attackdef_team) * this.team_power),
-				power_opponent = Math.round((16 + 16 * attackdef_team / attackdef_opponent) * this.opponent_power);
+		var power_team = Math.round((13 + 13 * attackdef_opponent / attackdef_team) * this.team_power),
+				power_opponent = Math.round((13 + 13 * attackdef_team / attackdef_opponent) * this.opponent_power);
 
 		this.power_team.innerText = this.formatNumber(power_team);
 		this.power_opponent.innerText  = this.formatNumber(power_opponent);
